@@ -1,0 +1,234 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para mi flaquita hermosa ❤️</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Georgia, serif;
+    background: linear-gradient(135deg, #ffc1d6, #ff75a9, #e9a5ff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px 12px;
+    color: #873653;
+}
+
+.contenedor {
+    width: 100%;
+    max-width: 550px;
+    text-align: center;
+    background: rgba(255,255,255,0.85);
+    padding: 25px 18px;
+    border-radius: 25px;
+    box-shadow: 0 10px 35px #a52d6540;
+}
+
+h1 {
+    color: #c42d6a;
+    font-size: 29px;
+}
+
+.osito {
+    position: relative;
+    font-size: 125px;
+    margin: 15px auto;
+    height: 155px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: respirar 2.5s infinite ease-in-out;
+}
+
+.carta-osito {
+    position: absolute;
+    font-size: 48px;
+    bottom: 0;
+    right: 25%;
+    transform: rotate(-12deg);
+}
+
+@keyframes respirar {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
+button {
+    background: #e83e83;
+    color: white;
+    border: none;
+    padding: 14px 25px;
+    border-radius: 30px;
+    font-size: 17px;
+    cursor: pointer;
+    margin: 12px;
+    box-shadow: 0 5px 12px #e83e8350;
+}
+
+button:hover {
+    background: #c52269;
+}
+
+#carta {
+    display: none;
+    background: #fffaf0;
+    border: 2px solid #f3b5c8;
+    border-radius: 15px;
+    padding: 22px 18px;
+    margin-top: 22px;
+    text-align: center;
+    animation: aparecer 1s ease;
+    line-height: 1.7;
+}
+
+#carta h2 {
+    color: #c42d6a;
+}
+
+.poema {
+    white-space: pre-line;
+    font-size: 17px;
+}
+
+.firma {
+    font-size: 20px;
+    color: #c42d6a;
+    font-weight: bold;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+#video {
+    display: none;
+    margin-top: 25px;
+}
+
+video {
+    width: 100%;
+    border-radius: 15px;
+    background: black;
+}
+
+.decoracion {
+    color: #e83e83;
+    font-size: 22px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="contenedor">
+
+    <h1>Para mi flaquita hermosa ❤️</h1>
+
+    <p>Un osito tiene algo muy especial para ti...</p>
+
+    <div class="osito">
+        🧸
+        <span class="carta-osito">💌</span>
+    </div>
+
+    <p class="decoracion">💕 💗 💕</p>
+
+    <p>¿Quieres descubrir lo que te escribí?</p>
+
+    <button id="boton" onclick="abrirCarta()">
+        Abrir mi carta 💌
+    </button>
+
+    <div id="carta">
+
+        <h2>💌 Para el amor de mi vida</h2>
+
+        <div class="poema">
+Mi niña hermosa, quiero que sepas,
+que eres mi alegría en cada despertar,
+la dueña de muchos de mis pensamientos,
+y la razón por la que sonrío sin pensar.
+
+No necesito mil estrellas,
+si en tus ojos encuentro mi universo,
+ni necesito un cuento de hadas,
+si contigo estoy viviendo algo tan bello.
+
+Quiero ser quien cuide tus sueños,
+quien te abrace cuando tengas frío,
+quien te recuerde cada día
+que eres el amor más bonito que ha llegado a mi vida.
+
+Y si el tiempo me diera mil vidas,
+en todas te volvería a elegir,
+porque no existe regalo más hermoso
+que tenerte y poder decirte:
+        </div>
+
+        <p class="firma">
+            Te amo mucho, mi flaquita hermosa y de ojos bonitos. ❤️
+        </p>
+
+        <p>Con todo mi amor, para ti mi niña hermosa. 🧸💕</p>
+
+        <button onclick="mostrarVideo()">
+            Ver mi otra sorpresa ❤️
+        </button>
+
+    </div>
+
+    <div id="video">
+        <h2>Un último detalle para ti 🥰</h2>
+
+        <video controls playsinline preload="metadata">
+            <source src="./video_compatible.mp4" type="video/mp4">
+            Tu navegador no puede reproducir este video.
+        </video>
+    </div>
+
+</div>
+
+<script>
+function abrirCarta() {
+    const carta = document.getElementById("carta");
+    const boton = document.getElementById("boton");
+
+    carta.style.display = "block";
+    boton.style.display = "none";
+
+    carta.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    });
+}
+
+function mostrarVideo() {
+    const video = document.getElementById("video");
+
+    video.style.display = "block";
+
+    video.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    });
+}
+</script>
+
+</body>
+</html>
